@@ -7,6 +7,10 @@ import lombok.Data;
 import org.hibernate.validator.constraints.Range;
 
 @Data
+/*@ScriptAssert( //이 검증까지 가는 건 무리. 제약이 많고 복잡함, 오브젝트 오류는 자바 코드로 처리하는 것을 권장
+    lang = "javascript",
+    script = "_this.price * _this.quantity >= 10000",
+    message = "총합이 10,000원 넘게 입력해주세요.")*/
 public class Item {
 
     private Long id;
