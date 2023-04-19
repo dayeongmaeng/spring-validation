@@ -178,6 +178,7 @@ public class ValidationItemControllerV2 {
         RedirectAttributes redirectAttributes, Model model) {
 
         //검증 로직
+//        ValidationUtils.rejectIfEmptyOrWhitespace(bindingResult, "itemName", "required"); 단순 기능만 제공
         if (!StringUtils.hasText(item.getItemName())) {
             bindingResult.rejectValue("itemName", "required");
         }
