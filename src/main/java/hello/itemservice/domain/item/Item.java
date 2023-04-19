@@ -1,6 +1,5 @@
 package hello.itemservice.domain.item;
 
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import lombok.Data;
@@ -13,6 +12,7 @@ import org.hibernate.validator.constraints.Range;
     message = "총합이 10,000원 넘게 입력해주세요.")*/
 public class Item {
 
+    @NotNull //수정 요구사항 추가
     private Long id;
     @NotBlank(message = "공백X")
     private String itemName;
@@ -21,7 +21,7 @@ public class Item {
     private Integer price;
 
     @NotNull
-    @Max(9999)
+//    @Max(9999) //수정 요구사항 추가
     private Integer quantity;
 
     public Item() {
